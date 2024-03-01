@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>よく使うコマンド集 - kickstart for jo-ken by 22</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="../terminal/how_to_comannd.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="../terminal/comannd_collection.html" class="active"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">kickstart for jo-ken by 22</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
+<tr><td><a href="#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやフォルダがあるかを見る。</td></tr>
+<tr><td><a href="#cd">cd</a></td><td>ディレクトリを移動する。</td></tr>
+<tr><td><a href="#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
+<tr><td><a href="#mkdir">mkdir</a></td><td>フォルダを作成する</td></tr>
+<tr><td><a href="#rm">rm</a></td><td>ファイルの削除などを行う</td></tr>
+<tr><td><a href="#pwd">pwd</a></td><td>現在自分のいるディレクトリを確認する。</td></tr>
+</tbody></table>
+</div>
+<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
+<p>よくプログラミングではフォルダのことをディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
+使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
+<p><img src="./img/ls.png" alt="lsの実行例" /></p>
+<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
+そのフォルダにあるすべてのファイルやフォルダを見るには<code>-a</code>オプションを使います。</p>
+<p><a href="./img/ls-a.png">ls -aの実行例</a></p>
+<p>すると一気に表示されるファイルやフォルダが増えました。</p>
+<p>他にもオプションがあるので調べてみてください。</p>
+<h3 id="cd"><a class="header" href="#cd">cd</a></h3>
+<p>基本的に下記のように使います。</p>
+<pre><code class="language-bash">cd &lt;移動したいディレクトリ&gt;
+</code></pre>
+<p>知ってると便利なもの</p>
+<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
+<tr><td>cd ..</td><td>一個前のディレクトリに移動</td></tr>
+<tr><td>cd -</td><td>前回cdコマンドを実行したディレクトリに移動。</td></tr>
+<tr><td>cd /</td><td>ルートフォルダに移動</td></tr>
+<tr><td>cd ~</td><td>ホームディレクトリに移動</td></tr>
+</tbody></table>
+</div>
+<h3 id="mv"><a class="header" href="#mv">mv</a></h3>
+<p>基本的に下記のように使います。</p>
+<pre><code class="language-bash">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
+</code></pre>
+<p><a href="./img/mv.png">mvコマンドの実行例（名前）</a></p>
+<p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
+<p><a href="./img/mv-name-where.png">mvコマンドの実行例（名前と場所）</a></p>
+<p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>フォルダの中に<code>apple.txt</code>として保存されています。</p>
+<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
+<p>基本的に下記のように使います。</p>
+<pre><code class="language-bash">mkdir [オプション] &lt;ディレクトリ名&gt;
+</code></pre>
+<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
+<pre><code class="language-bash">rm [オプション] &lt;ファイルやディレクトリ&gt;
+</code></pre>
+<p>フォルダを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
+<h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
+<p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../terminal/how_to_comannd.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../terminal/how_to_comannd.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
