@@ -194,7 +194,7 @@
 <p>他にもオプションがあるので調べてみてください。</p>
 <h3 id="cd"><a class="header" href="#cd">cd</a></h3>
 <p>基本的に下記のように使います。</p>
-<pre><code class="language-bash">cd &lt;移動したいディレクトリ&gt;
+<pre><code class="language-shell">cd &lt;移動したいディレクトリ&gt;
 </code></pre>
 <p>知ってると便利なもの</p>
 <div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
@@ -206,7 +206,7 @@
 </div>
 <h3 id="mv"><a class="header" href="#mv">mv</a></h3>
 <p>基本的に下記のように使います。</p>
-<pre><code class="language-bash">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
+<pre><code class="language-shell">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
 </code></pre>
 <p><a href="./img/mv.png">mvコマンドの実行例（名前）</a></p>
 <p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
@@ -214,14 +214,19 @@
 <p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>フォルダの中に<code>apple.txt</code>として保存されています。</p>
 <h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
 <p>基本的に下記のように使います。</p>
-<pre><code class="language-bash">mkdir [オプション] &lt;ディレクトリ名&gt;
+<pre><code class="language-shell">mkdir [オプション] &lt;ディレクトリ名&gt;
 </code></pre>
 <h3 id="rm"><a class="header" href="#rm">rm</a></h3>
-<pre><code class="language-bash">rm [オプション] &lt;ファイルやディレクトリ&gt;
+<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
 </code></pre>
 <p>フォルダを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
 <h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
 <p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
+<h3 id="man"><a class="header" href="#man">man</a></h3>
+<p>コマンドにどんなオプションがあるかなどを調べたい場合に使ってみましょう。英語ですが、検索する手間を省けるので、慣れていきましょう。</p>
+<pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
+</code></pre>
+<p>man自体についても調べることができます。</p>
 
                     </main>
 
