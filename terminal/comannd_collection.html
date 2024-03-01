@@ -173,60 +173,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td><a href="#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやフォルダがあるかを見る。</td></tr>
-<tr><td><a href="#cd">cd</a></td><td>ディレクトリを移動する。</td></tr>
-<tr><td><a href="#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
-<tr><td><a href="#mkdir">mkdir</a></td><td>フォルダを作成する</td></tr>
-<tr><td><a href="#rm">rm</a></td><td>ファイルの削除などを行う</td></tr>
-<tr><td><a href="#pwd">pwd</a></td><td>現在自分のいるディレクトリを確認する。</td></tr>
-</tbody></table>
-</div>
-<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
-<p>よくプログラミングではフォルダのことをディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
-使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
-<p><img src="./img/ls.png" alt="lsの実行例" /></p>
-<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
-そのフォルダにあるすべてのファイルやフォルダを見るには<code>-a</code>オプションを使います。</p>
-<p><a href="./img/ls-a.png">ls -aの実行例</a></p>
-<p>すると一気に表示されるファイルやフォルダが増えました。</p>
-<p>他にもオプションがあるので調べてみてください。</p>
-<h3 id="cd"><a class="header" href="#cd">cd</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">cd &lt;移動したいディレクトリ&gt;
-</code></pre>
-<p>知ってると便利なもの</p>
-<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td>cd ..</td><td>一個前のディレクトリに移動</td></tr>
-<tr><td>cd -</td><td>前回cdコマンドを実行したディレクトリに移動。</td></tr>
-<tr><td>cd /</td><td>ルートフォルダに移動</td></tr>
-<tr><td>cd ~</td><td>ホームディレクトリに移動</td></tr>
-</tbody></table>
-</div>
-<h3 id="mv"><a class="header" href="#mv">mv</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
-</code></pre>
-<p><a href="./img/mv.png">mvコマンドの実行例（名前）</a></p>
-<p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
-<p><a href="./img/mv-name-where.png">mvコマンドの実行例（名前と場所）</a></p>
-<p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>フォルダの中に<code>apple.txt</code>として保存されています。</p>
-<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mkdir [オプション] &lt;ディレクトリ名&gt;
-</code></pre>
-<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
-<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
-</code></pre>
-<p>フォルダを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
-<h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
-<p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
-<h3 id="man"><a class="header" href="#man">man</a></h3>
-<p>コマンドにどんなオプションがあるかなどを調べたい場合に使ってみましょう。英語ですが、検索する手間を省けるので、慣れていきましょう。</p>
-<pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
-</code></pre>
-<p>man自体についても調べることができます。</p>
+                        <h1 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h1>
 
                     </main>
 

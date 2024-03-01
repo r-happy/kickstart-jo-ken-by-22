@@ -180,82 +180,8 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ターミナルの操作"><a class="header" href="#ターミナルの操作">ターミナルの操作</a></h1>
 <p>ここではターミナル（いわゆる黒い画面）との対話の仕方を学びます。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="シェルの見方"><a class="header" href="#シェルの見方">シェルの見方</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="コマンドの見方"><a class="header" href="#コマンドの見方">コマンドの見方</a></h2>
-<p>ここでコマンドの例を見せます。</p>
-<pre><code class="language-bash">git commit -m "ここにはコミットメッセージを入れるといいらしい"
-</code></pre>
-<p>ではこのコマンドはどのような要素で構成されているのでしょうか。
-下記の表に示します。</p>
-<div class="table-wrapper"><table><thead><tr><th>要素</th><th>説明</th></tr></thead><tbody>
-<tr><td>git</td><td>コマンド</td></tr>
-<tr><td>commit</td><td>サブコマンド</td></tr>
-<tr><td>-m</td><td>オプション</td></tr>
-<tr><td>"任意の文字列"</td><td>引数</td></tr>
-</tbody></table>
-</div>
-<p>では具体的に見ていきましょう。</p>
-<h3 id="コマンド"><a class="header" href="#コマンド"><strong>コマンド</strong></a></h3>
-<p>ここにはアプリ名が入ります。</p>
-<h3 id="サブコマンド"><a class="header" href="#サブコマンド"><strong>サブコマンド</strong></a></h3>
-<p>コマンドで指定したアプリを使って<strong>何</strong>をしたいのか（どの機能を利用したいのか）が入ります。</p>
-<h3 id="オプション"><a class="header" href="#オプション"><strong>オプション</strong></a></h3>
-<p>オプションはコマンドの振る舞いを変更したり、追加の情報を提供したりする物です。</p>
-<h3 id="引数"><a class="header" href="#引数"><strong>引数</strong></a></h3>
-<p>引数にはコマンドに渡される追加の情報が入ります。</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td><a href="terminal/comannd_collection.html#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやフォルダがあるかを見る。</td></tr>
-<tr><td><a href="terminal/comannd_collection.html#cd">cd</a></td><td>ディレクトリを移動する。</td></tr>
-<tr><td><a href="terminal/comannd_collection.html#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
-<tr><td><a href="terminal/comannd_collection.html#mkdir">mkdir</a></td><td>フォルダを作成する</td></tr>
-<tr><td><a href="terminal/comannd_collection.html#rm">rm</a></td><td>ファイルの削除などを行う</td></tr>
-<tr><td><a href="terminal/comannd_collection.html#pwd">pwd</a></td><td>現在自分のいるディレクトリを確認する。</td></tr>
-</tbody></table>
-</div>
-<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
-<p>よくプログラミングではフォルダのことをディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
-使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
-<p><img src="terminal/./img/ls.png" alt="lsの実行例" /></p>
-<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
-そのフォルダにあるすべてのファイルやフォルダを見るには<code>-a</code>オプションを使います。</p>
-<p><a href="terminal/./img/ls-a.png">ls -aの実行例</a></p>
-<p>すると一気に表示されるファイルやフォルダが増えました。</p>
-<p>他にもオプションがあるので調べてみてください。</p>
-<h3 id="cd"><a class="header" href="#cd">cd</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">cd &lt;移動したいディレクトリ&gt;
-</code></pre>
-<p>知ってると便利なもの</p>
-<div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td>cd ..</td><td>一個前のディレクトリに移動</td></tr>
-<tr><td>cd -</td><td>前回cdコマンドを実行したディレクトリに移動。</td></tr>
-<tr><td>cd /</td><td>ルートフォルダに移動</td></tr>
-<tr><td>cd ~</td><td>ホームディレクトリに移動</td></tr>
-</tbody></table>
-</div>
-<h3 id="mv"><a class="header" href="#mv">mv</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
-</code></pre>
-<p><a href="terminal/./img/mv.png">mvコマンドの実行例（名前）</a></p>
-<p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
-<p><a href="terminal/./img/mv-name-where.png">mvコマンドの実行例（名前と場所）</a></p>
-<p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>フォルダの中に<code>apple.txt</code>として保存されています。</p>
-<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mkdir [オプション] &lt;ディレクトリ名&gt;
-</code></pre>
-<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
-<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
-</code></pre>
-<p>フォルダを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
-<h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
-<p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
-<h3 id="man"><a class="header" href="#man">man</a></h3>
-<p>コマンドにどんなオプションがあるかなどを調べたい場合に使ってみましょう。英語ですが、検索する手間を省けるので、慣れていきましょう。</p>
-<pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
-</code></pre>
-<p>man自体についても調べることができます。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="コマンドの見方"><a class="header" href="#コマンドの見方">コマンドの見方</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h1>
 
                     </main>
 
