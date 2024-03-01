@@ -6,6 +6,6 @@
 
 - [ターミナルの操作](terminal/terminal.md)
     - [シェルの見方](terminal/how_to_shell.md)
-    - [コマンドの見方](terminal/how_to_comannd.md)
-    - [よく使うコマンド集](terminal/comannd_collection.md)
+    - [コマンドの見方](terminal/how_to_command.md)
+    - [よく使うコマンド集](terminal/command_collection.md)
 
