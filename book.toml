@@ -1,0 +1,6 @@
+[book]
+authors = ["rhappy"]
+language = "ja"
+multilingual = false
+src = "src"
+title = "kickstart for jo-ken by 22"
