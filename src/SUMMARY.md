@@ -9,3 +9,8 @@
     - [コマンドの見方](terminal/how_to_command.md)
     - [よく使うコマンド集](terminal/command_collection.md)
 
+- [webサイトを作ってみよう!](./static-site-intro/README.md)
+  - [環境構築](./static-site-intro/environment.md)
+  - [ファイルを作る](./static-site-intro/make-file.md)
+  - [htmlファイルの作成](./static-site-intro/make-html-file.md)
+  - [cssファイルの作成](./static-site-intro/make-css-file.md)
