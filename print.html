@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -261,6 +261,104 @@
 <pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
 </code></pre>
 <p>man自体についても調べることができます。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="webサイトを作ってみよう"><a class="header" href="#webサイトを作ってみよう">webサイトを作ってみよう!</a></h1>
+<h2 id="概要"><a class="header" href="#概要">概要</a></h2>
+<p>ここでは静的なウェブサイトを作ってみます。</p>
+<h2 id="静的動的staticdynamic"><a class="header" href="#静的動的staticdynamic">静的・動的（static・dynamic）</a></h2>
+<p>ウェブサイトは主に静的(static)なサイトと動的(dynamic)なサイトに分かれています。
+これらの違いを見ていきましょう。</p>
+<h3 id="静的-static"><a class="header" href="#静的-static">静的 static</a></h3>
+<p>静的なサイトというのはあらかじめ用意されているHTMLなどのファイルを提供します。
+つまり、どのユーザーがそのサイトを閲覧しても内容は変わりません。
+例えば学校のホームページなどが挙げられます。</p>
+<h3 id="動的-dynamic"><a class="header" href="#動的-dynamic">動的 dynamic</a></h3>
+<p>静的なサイトはどのユーザーが閲覧しても内容は変わりませんでした。
+それに対し動的なサイトというのはユーザーのリクエストや、操作によって内容が変わるサイトの事です。
+例えばGoogle Driveなどが挙げられます。</p>
+<h2 id="早速作っていこう"><a class="header" href="#早速作っていこう">早速作っていこう！</a></h2>
+<p>今回作成するのは静的なサイトです。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="環境構築"><a class="header" href="#環境構築">環境構築</a></h1>
+<p>最初にこれからのサイトを作るうえで必要なアプリケーションをインストールしましょう。
+今回、開発に用いるアプリケーションは1つだけです。</p>
+<h2 id="vscode"><a class="header" href="#vscode">vscode</a></h2>
+<p>インストールするアプリはvscodeです。下記のリンクから自分の環境に合う物を選んでダウンロードしましょう。（自分のお気に入りのエディタがあるよという人はそれを使っても構いません。しかしこれからの講座はすべてvscode前提でプラグインなども使っていきます。）</p>
+<ul>
+<li><a href="https://code.visualstudio.com/download">vscode</a>（正式名称 Visual Studio Code）</li>
+</ul>
+<p>これがvscodeです。（まっさらなvscodeを使うために画像ではinsiderバージョンを使っています。アイコンの色とかが違うと思いますが気にしなくていいです。）
+<img src="static-site-intro/./img/vscode-home.png" alt="vscode" /></p>
+<h3 id="プラグインのインストール"><a class="header" href="#プラグインのインストール">プラグインのインストール</a></h3>
+<p>先にこの講座で使うvscodeのプラグインをインストールします。
+左側のところから四角が四つあるところを押すとプログインを検索できます。</p>
+<p><img src="static-site-intro/./img/vscode-extension.png" alt="extension" /></p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">live server</a><br />
+これは作成したhtmlファイルを参照して自動でローカルサーバーを立ち上げブラウザから見れるようにしてくれます。<a href="static-site-intro/./img/vscode-extension-liveserver.png">検索したときの画像</a></li>
+</ul>
+<p>これで必要な環境構築は終了です。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ファイルを作る"><a class="header" href="#ファイルを作る">ファイルを作る</a></h1>
+<p>まず最初に作業を行うフォルダをvscodeで開く必要があります。
+左上のFileからOpen Folderを選択します。</p>
+<p><img src="static-site-intro/./img/vscode-open-folder.png" alt="open-folder" /></p>
+<p>そして自分の開きたいフォルダーを選択します。<a href="static-site-intro/./img/vscode-select-folder.png">画像</a><br />
+フォルダーを開くと左上に開いたフォルダの名前が表示されていると思います。</p>
+<p><img src="static-site-intro/./img/vscode-folder-name.png" alt="folder-name" /></p>
+<p>そのフォルダーの名前の右側ににファイルとフォルダーなどのアイコンがあります。
+これらをクリックすることでファイルやフォルダーの作成が行えます。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="htmlファイルの作成"><a class="header" href="#htmlファイルの作成">htmlファイルの作成</a></h1>
+<p>htmlはウェブページを作成するためのマークアップ言語です。(厳密にはプログラミング言語ではない。)
+htmlはタグで要素を定義します。
+どのタグを使うかでウェブサイトにどの要素が表示されるのかが変わります。</p>
+<pre><code class="language-html">&lt;&gt;  開始タグ
+&lt;/&gt; 終了タグ
+
+&lt;p&gt;段落&lt;/p&gt;
+
+&lt;h1&gt;見出し&lt;/h1&gt;
+
+&lt;img src="xxx" alt="画像" /&gt;
+</code></pre>
+<p>ウェブサイトの実際に見える部分というのは<code>&lt;body&gt;&lt;/body&gt;</code>タグの中に書かれます。</p>
+<h2 id="step-1"><a class="header" href="#step-1">step 1</a></h2>
+<p>htmlファイルを作成します。</p>
+<p><img src="static-site-intro/./img/make-html-file.png" alt="make-html-file" /></p>
+<h2 id="step2"><a class="header" href="#step2">step2</a></h2>
+<p>では実際にhtmlファイルを書いていきましょう。
+htmlファイル上で<code>!</code>を入力します。<a href="static-site-intro/./img/vscode-!.png">画像</a><br />
+画像の状態で<code>Enter</code>を押すとvscodeがひな形を書いてくれます。<a href="static-site-intro/./img/vscode-!-after.png">画像</a></p>
+<details>
+<summary>ひな形で作成されるコード</summary>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</details>
+<br>
+<p>では<code>body</code>タグの中に書いていきましょう。
+以下のコードを<code>body</code>タグのなかにコピペしましょう。</p>
+<pre><code class="language-html">    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;h2&gt;Hello World&lt;/h2&gt;
+    &lt;h3&gt;Hello World&lt;/h3&gt;
+    &lt;button&gt;this is button&lt;/button&gt;
+</code></pre>
+<p><code>Ctrl + s</code>でファイルを保存します。
+そうするとファイル名が表示されているところの白い点が消えます。<a href="static-site-intro/./img/vscode-file-white-point.png">画像</a></p>
+<h2 id="step-3"><a class="header" href="#step-3">step 3</a></h2>
+<p>結果をブラウザで確認しましょう。
+ここで追加したプラグインを使用します。
+vscodeの左下にある<code>Go Live</code>をクリックします。</p>
+<p><img src="static-site-intro/./img/vscode-extension-golive.png" alt="Go-Live-Button" /></p>
+<p>するとブラウザが立ち上がりウェブサイトが表示されます。🎉</p>
+<p><img src="static-site-intro/./img/golive-active.png" alt="browser" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cssファイルの作成"><a class="header" href="#cssファイルの作成">cssファイルの作成</a></h1>
 
                     </main>
 

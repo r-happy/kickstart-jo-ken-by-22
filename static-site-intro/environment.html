@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>基本的な知識について - kickstart for jo-ken by 22</title>
+        <title>環境構築 - kickstart for jo-ken by 22</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html" class="active">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="../terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="../terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html" class="active"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,18 +173,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="基本的な知識"><a class="header" href="#基本的な知識">基本的な知識</a></h1>
-<p>ここではこれからどの分野に進んでも必要になるであろう知識をまとめていきます。</p>
+                        <h1 id="環境構築"><a class="header" href="#環境構築">環境構築</a></h1>
+<p>最初にこれからのサイトを作るうえで必要なアプリケーションをインストールしましょう。
+今回、開発に用いるアプリケーションは1つだけです。</p>
+<h2 id="vscode"><a class="header" href="#vscode">vscode</a></h2>
+<p>インストールするアプリはvscodeです。下記のリンクから自分の環境に合う物を選んでダウンロードしましょう。（自分のお気に入りのエディタがあるよという人はそれを使っても構いません。しかしこれからの講座はすべてvscode前提でプラグインなども使っていきます。）</p>
+<ul>
+<li><a href="https://code.visualstudio.com/download">vscode</a>（正式名称 Visual Studio Code）</li>
+</ul>
+<p>これがvscodeです。（まっさらなvscodeを使うために画像ではinsiderバージョンを使っています。アイコンの色とかが違うと思いますが気にしなくていいです。）
+<img src="./img/vscode-home.png" alt="vscode" /></p>
+<h3 id="プラグインのインストール"><a class="header" href="#プラグインのインストール">プラグインのインストール</a></h3>
+<p>先にこの講座で使うvscodeのプラグインをインストールします。
+左側のところから四角が四つあるところを押すとプログインを検索できます。</p>
+<p><img src="./img/vscode-extension.png" alt="extension" /></p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">live server</a><br />
+これは作成したhtmlファイルを参照して自動でローカルサーバーを立ち上げブラウザから見れるようにしてくれます。<a href="./img/vscode-extension-liveserver.png">検索したときの画像</a></li>
+</ul>
+<p>これで必要な環境構築は終了です。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../static-site-intro/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../terminal/terminal.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../static-site-intro/make-file.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -194,11 +211,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../static-site-intro/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../terminal/terminal.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../static-site-intro/make-file.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
