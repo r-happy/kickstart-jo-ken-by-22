@@ -10,3 +10,4 @@ windowsだとそこまで使わないのですが、linuxの操作で多用し�
 ここでは便利なツールのひとつであるgitを使用するための下準備をしていきます。まずは、この[ページ](https://kickstart.jo-ken.info/wsl_environment/chapter_1.html)を見ながらwslをインストールしてみましょう！
 
 [^1]:個人的にあながち間違いでもないと思っています。
+
