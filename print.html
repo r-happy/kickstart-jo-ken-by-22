@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -252,58 +252,47 @@
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>個人的にあながち間違いでもないと思っています。</p>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="シェルの見方"><a class="header" href="#シェルの見方">シェルの見方</a></h1>
-<p>では、キーボードのwindowsキーを押して、「wsl」と入力してみてください。なにやら黒っぽい画面が立ち上がりましたね。</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="コマンドの見方"><a class="header" href="#コマンドの見方">コマンドの見方</a></h2>
-<p>ここでは<code>git</code>コマンドを例にとって解説していきます。gitコマンドは簡単に言うと、書いたコードの履歴を保存し、管理するためのツールです。とても便利なツールなので、この<a href="https://git-scm.com/book/ja/v2">サイト</a>を読んで使い方を身につけましょう。</p>
-<pre><code class="language-shell">git commit -a -m "ここにはコミットメッセージを入れるといいらしい"
+<div style="break-before: page; page-break-before: always;"></div><h1 id="シェルの使い方"><a class="header" href="#シェルの使い方">シェルの使い方</a></h1>
+<p>では、キーボードのwindowsキーを押して、「wsl」と入力してみてください。なにやら黒っぽい画面が立ち上がりましたね。ここからはコマンドというものを使って操作をしていきます。ここで使用するコマンドは「よく使うコマンド集」としてまとめていますので、参照するようにしてください。</p>
+<h2 id="操作の練習"><a class="header" href="#操作の練習">操作の練習</a></h2>
+<p>これからコマンドの練習をしますが、今回はあえてprocessingで作成したコードがある場所で行います。</p>
+<p>まず、そこへ移動するために、cdコマンドを使用します。</p>
+<pre><code class="language-shell">cd &lt;移動したい場所&gt;
 </code></pre>
-<p>ではこのコマンドはどのような要素で構成されているのでしょうか。
-下記の表に示します。</p>
-<div class="table-wrapper"><table><thead><tr><th>要素</th><th>説明</th></tr></thead><tbody>
-<tr><td>git</td><td>コマンド</td></tr>
-<tr><td>commit</td><td>サブコマンド</td></tr>
-<tr><td>-a, -m</td><td>オプション</td></tr>
-<tr><td>"任意の文字列"</td><td>引数</td></tr>
-</tbody></table>
-</div>
-<p>では具体的に見ていきましょう。</p>
-<h3 id="コマンド"><a class="header" href="#コマンド"><strong>コマンド</strong></a></h3>
-<p>ここにはアプリ名が入ります。 ie:<code>git</code>,<del><code>vim</code></del>,<del><code>nvim</code></del>,<del><code>emacs</code></del></p>
-<h3 id="サブコマンド"><a class="header" href="#サブコマンド"><strong>サブコマンド</strong></a></h3>
-<p>コマンドで指定したアプリを使って<strong>何</strong>をしたいのか（どの機能を利用したいのか）が入ります。</p>
-<p>この場合の<code>commit</code>とは、作成したコード等の履歴を保存するコマンドです。</p>
-<h3 id="オプション"><a class="header" href="#オプション"><strong>オプション</strong></a></h3>
-<p>オプションはコマンドの振る舞いを変更したり、追加の情報を提供したりする物です。</p>
-<p>ここで使用している<code>-a</code>や<code>-m</code>は履歴の保存を一回のコマンドで行なうためにつけているものです。すべてこれで行なうとういわけではないので、場合によって使い分けましょう。</p>
-<h3 id="引数"><a class="header" href="#引数"><strong>引数</strong></a></h3>
-<p>引数にはコマンドに渡される追加の情報が入ります。</p>
-<p>先ほどの<code>-m</code>の引数としてこのダブルクオーテーションで囲まれた文字列を付けています。</p>
+<p>移動ができたら、lsコマンドでコードがあるか確認しましょう。</p>
+<pre><code class="language-shell">ls
+</code></pre>
+<p>ありましたか？では次にディレクトリ(フォルダー)を作成してみましょう。</p>
+<pre><code class="language-shell">mkdir &lt;ディレクトリの名前&gt;
+</code></pre>
+<p>またlsコマンドで作成されたか確認できたら、cdコマンドでそこへ移動しましょう。次に新しいファイルを作成してみます。作成方法はいろいろな方法がありますが、ここではtouchコマンドを使用します。とりあえず、2つファイルを作ってください。</p>
+<pre><code class="language-shell">touch &lt;ファイルの名前&gt;
+</code></pre>
+<p>ではせっかく作成したファイルですが、rmコマンドを使って、1つ削除しましょう。</p>
+<pre><code class="language-shell">rm &lt;ファイルの名前&gt;
+</code></pre>
+<p>lsすると消えてしまったことを確認できるでしょう。このような操作では<strong>ゴミ箱のような機能は利用できない</strong>ので、気をつけましょう。最後に今作成したファイルの名前をmvコマンドで変更してください。</p>
+<pre><code class="language-shell">mv &lt;先ほどのファイルの名前&gt; ignore_me.txt
+</code></pre>
+<h2 id="next"><a class="header" href="#next">next</a></h2>
+<p>皆さんはprocessingでコードを書いてきましたが、なにか変更があったけど取り消したい場合などがあったことでしょう。そんなときに便利なのが次に紹介するgitです。<a href="https://kickstart.jo-ken.info/git/index.html">講座ページ</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td><a href="terminal/command_collection.html#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやディレクトリがあるかを見る。</td></tr>
 <tr><td><a href="terminal/command_collection.html#cd">cd</a></td><td>ディレクトリを移動する。</td></tr>
-<tr><td><a href="terminal/command_collection.html#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
+<tr><td><a href="terminal/command_collection.html#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやディレクトリがあるかを見る。</td></tr>
 <tr><td><a href="terminal/command_collection.html#mkdir">mkdir</a></td><td>ディレクトリを作成する。</td></tr>
+<tr><td><a href="terminal/command_collection.html#touch">touch</a></td><td>空ファイルを作成</td></tr>
 <tr><td><a href="terminal/command_collection.html#rm">rm</a></td><td>ファイルの削除などを行う。</td></tr>
+<tr><td><a href="terminal/command_collection.html#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
 <tr><td><a href="terminal/command_collection.html#pwd">pwd</a></td><td>現在自分のいるディレクトリを確認する。</td></tr>
 <tr><td><a href="terminal/command_collection.html#man">man</a></td><td>コマンド等の使い方を調べる。</td></tr>
 </tbody></table>
 </div>
-<p>これらはほんの一部にすぎません。たくさんあって覚えられたいよ~と思うかもしれませんが、普段から使用していると身に付いていくのでどんどん使っていきましょう。(逆に抜けだせなくなるかも！？)</p>
+<p>これらはほんの一部にすぎません(<a href="https://ja.wikipedia.org/wiki/GNU_Core_Utilities">ヌーコアユニッツ</a>manは違います)。たくさんあって覚えられたいよ~と思うかもしれませんが、普段から使用していると身に付いていくのでどんどん使っていきましょう。(逆に抜けだせなくなるかも！？)</p>
 <p>ちょっとできるようになったら、ぜひこの<a href="https://cmdchallenge.com/">サイト</a>でどこまでいけるかためしてみましょう！</p>
-<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
-<p>プログラミング界隈ではフォルダはよくディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
-使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
-<p><img src="terminal/./img/ls.png" alt="lsの実行例" /></p>
-<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
-そのディレクトリにあるすべてのファイルやディレクトリを見るには<code>-a</code>オプションを使います。</p>
-<p><a href="terminal/./img/ls-a.png">ls -aの実行例</a></p>
-<p>すると一気に表示されるファイルやディレクトリが増えました。</p>
-<p>他にもオプションがあるので調べてみてください。</p>
 <h3 id="cd"><a class="header" href="#cd">cd</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">cd &lt;移動したいディレクトリ&gt;
+<p>基本的な使い方</p>
+<pre><code class="language-shell">cd &lt;ディレクトリの場所&gt;
 </code></pre>
 <p>知ってると便利なもの</p>
 <div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
@@ -313,6 +302,35 @@
 <tr><td>cd ~</td><td>ホームディレクトリに移動</td></tr>
 </tbody></table>
 </div>
+<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">ls
+</code></pre>
+<p>プログラミング界隈ではフォルダはよくディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
+使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
+<p><img src="terminal/./img/ls.png" alt="lsの実行例" /></p>
+<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
+そのディレクトリにあるすべてのファイルやディレクトリを見るには<code>-a</code>オプションを使います。</p>
+<p><a href="terminal/./img/ls-a.png">ls -aの実行例</a></p>
+<p>すると一気に表示されるファイルやディレクトリが増えました。</p>
+<p>他にもオプションがあるので調べてみてください。</p>
+<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">mkdir &lt;ファイルやディレクトリ&gt;
+</code></pre>
+<p><code>-p</code>を使うと、階層の深いディレクトリを一回で作ることができます。</p>
+<pre><code class="language-shell">mkdir -p hoge/foo/bar
+</code></pre>
+<h3 id="touch"><a class="header" href="#touch">touch</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">touch &lt;ファイルの名前&gt;
+</code></pre>
+<p>本来はファイルの最終アクセス時間を編集するために使用されます。</p>
+<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
+</code></pre>
+<p>ディレクトリを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
 <h3 id="mv"><a class="header" href="#mv">mv</a></h3>
 <p>基本的に下記のように使います。</p>
 <pre><code class="language-shell">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
@@ -321,20 +339,16 @@
 <p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
 <p><a href="terminal/./img/mv-name-where.png">mvコマンドの実行例（名前と場所）</a></p>
 <p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>ディレクトリの中に<code>apple.txt</code>として保存されています。</p>
-<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mkdir [オプション] &lt;ディレクトリ名&gt;
-</code></pre>
-<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
-<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
-</code></pre>
-<p>ディレクトリを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
 <h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
-<p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">pwd
+</code></pre>
+<hr />
 <h3 id="man"><a class="header" href="#man">man</a></h3>
-<p>英語ですが、検索する手間を省けるので、慣れていきましょう。そのコマンドにどんなオプション等があるのかが一覧できるので、様々な操作を早く覚えることができると思います。</p>
+<p>基本的な使い方</p>
 <pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
 </code></pre>
+<p>英語ですが、検索する手間を省けるので、慣れていきましょう。そのコマンドにどんなオプション等があるのかが一覧できるので、様々な操作を早く覚えることができると思います。</p>
 <p>man自体についても調べることができます。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="webサイトを作ってみよう"><a class="header" href="#webサイトを作ってみよう">webサイトを作ってみよう!</a></h1>
 <h2 id="概要"><a class="header" href="#概要">概要</a></h2>

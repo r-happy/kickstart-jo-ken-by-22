@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの見方</a></li><li class="chapter-item expanded "><a href="../terminal/how_to_command.html"><strong aria-hidden="true">1.2.</strong> コマンドの見方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html" class="active"><strong aria-hidden="true">1.3.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html" class="active"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -175,29 +175,21 @@
                     <main>
                         <h2 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
-<tr><td><a href="#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやディレクトリがあるかを見る。</td></tr>
 <tr><td><a href="#cd">cd</a></td><td>ディレクトリを移動する。</td></tr>
-<tr><td><a href="#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
+<tr><td><a href="#ls">ls</a></td><td>現在のディレクトリにどのようなファイルやディレクトリがあるかを見る。</td></tr>
 <tr><td><a href="#mkdir">mkdir</a></td><td>ディレクトリを作成する。</td></tr>
+<tr><td><a href="#touch">touch</a></td><td>空ファイルを作成</td></tr>
 <tr><td><a href="#rm">rm</a></td><td>ファイルの削除などを行う。</td></tr>
+<tr><td><a href="#mv">mv</a></td><td>ファイルの名前を変えたり場所を変えたりする。</td></tr>
 <tr><td><a href="#pwd">pwd</a></td><td>現在自分のいるディレクトリを確認する。</td></tr>
 <tr><td><a href="#man">man</a></td><td>コマンド等の使い方を調べる。</td></tr>
 </tbody></table>
 </div>
-<p>これらはほんの一部にすぎません。たくさんあって覚えられたいよ~と思うかもしれませんが、普段から使用していると身に付いていくのでどんどん使っていきましょう。(逆に抜けだせなくなるかも！？)</p>
+<p>これらはほんの一部にすぎません(<a href="https://ja.wikipedia.org/wiki/GNU_Core_Utilities">ヌーコアユニッツ</a>manは違います)。たくさんあって覚えられたいよ~と思うかもしれませんが、普段から使用していると身に付いていくのでどんどん使っていきましょう。(逆に抜けだせなくなるかも！？)</p>
 <p>ちょっとできるようになったら、ぜひこの<a href="https://cmdchallenge.com/">サイト</a>でどこまでいけるかためしてみましょう！</p>
-<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
-<p>プログラミング界隈ではフォルダはよくディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
-使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
-<p><img src="./img/ls.png" alt="lsの実行例" /></p>
-<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
-そのディレクトリにあるすべてのファイルやディレクトリを見るには<code>-a</code>オプションを使います。</p>
-<p><a href="./img/ls-a.png">ls -aの実行例</a></p>
-<p>すると一気に表示されるファイルやディレクトリが増えました。</p>
-<p>他にもオプションがあるので調べてみてください。</p>
 <h3 id="cd"><a class="header" href="#cd">cd</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">cd &lt;移動したいディレクトリ&gt;
+<p>基本的な使い方</p>
+<pre><code class="language-shell">cd &lt;ディレクトリの場所&gt;
 </code></pre>
 <p>知ってると便利なもの</p>
 <div class="table-wrapper"><table><thead><tr><th>コマンド</th><th>説明</th></tr></thead><tbody>
@@ -207,6 +199,35 @@
 <tr><td>cd ~</td><td>ホームディレクトリに移動</td></tr>
 </tbody></table>
 </div>
+<h3 id="ls"><a class="header" href="#ls">ls</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">ls
+</code></pre>
+<p>プログラミング界隈ではフォルダはよくディレクトリ(directory)と呼ばれます。（呼ばれたり呼ばれなかったり）
+使い方は簡単で<code>ls</code>と打つだけです。最初はアイコンや色はついていないと思いますがカスタマイズするのはとても楽しいのでぜひやってみて下さい。画像で使っているは<a href="https://github.com/eza-community/eza">exa</a>です。</p>
+<p><img src="./img/ls.png" alt="lsの実行例" /></p>
+<p>しかし<code>ls</code>だけでは<strong>見えない</strong>ファイルがあります。（名前がピリオド<code>.</code>から始まってるもの）
+そのディレクトリにあるすべてのファイルやディレクトリを見るには<code>-a</code>オプションを使います。</p>
+<p><a href="./img/ls-a.png">ls -aの実行例</a></p>
+<p>すると一気に表示されるファイルやディレクトリが増えました。</p>
+<p>他にもオプションがあるので調べてみてください。</p>
+<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">mkdir &lt;ファイルやディレクトリ&gt;
+</code></pre>
+<p><code>-p</code>を使うと、階層の深いディレクトリを一回で作ることができます。</p>
+<pre><code class="language-shell">mkdir -p hoge/foo/bar
+</code></pre>
+<h3 id="touch"><a class="header" href="#touch">touch</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">touch &lt;ファイルの名前&gt;
+</code></pre>
+<p>本来はファイルの最終アクセス時間を編集するために使用されます。</p>
+<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
+</code></pre>
+<p>ディレクトリを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
 <h3 id="mv"><a class="header" href="#mv">mv</a></h3>
 <p>基本的に下記のように使います。</p>
 <pre><code class="language-shell">mv [オプション] &lt;どれを/なにを&gt; &lt;どこに/なにに&gt;
@@ -215,27 +236,23 @@
 <p><code>apple.txt</code>ファイルが<code>banana.txt</code>ファイルに名前が変わっている事が確認できました。</p>
 <p><a href="./img/mv-name-where.png">mvコマンドの実行例（名前と場所）</a></p>
 <p>名前と場所を両方変えることもでき、<code>banana.txt</code>が<code>tt</code>ディレクトリの中に<code>apple.txt</code>として保存されています。</p>
-<h3 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h3>
-<p>基本的に下記のように使います。</p>
-<pre><code class="language-shell">mkdir [オプション] &lt;ディレクトリ名&gt;
-</code></pre>
-<h3 id="rm"><a class="header" href="#rm">rm</a></h3>
-<pre><code class="language-shell">rm [オプション] &lt;ファイルやディレクトリ&gt;
-</code></pre>
-<p>ディレクトリを消すときは<code>-r</code>オプションが必要ということを忘れないようにしましょう。</p>
 <h3 id="pwd"><a class="header" href="#pwd">pwd</a></h3>
-<p><code>pwd</code>は自分がいまどのディレクトリにいるのかを見るために使われるコマンドです。</p>
+<p>基本的な使い方</p>
+<pre><code class="language-shell">pwd
+</code></pre>
+<hr />
 <h3 id="man"><a class="header" href="#man">man</a></h3>
-<p>英語ですが、検索する手間を省けるので、慣れていきましょう。そのコマンドにどんなオプション等があるのかが一覧できるので、様々な操作を早く覚えることができると思います。</p>
+<p>基本的な使い方</p>
 <pre><code class="language-shell">man &lt;調べたいコマンド名など&gt;
 </code></pre>
+<p>英語ですが、検索する手間を省けるので、慣れていきましょう。そのコマンドにどんなオプション等があるのかが一覧できるので、様々な操作を早く覚えることができると思います。</p>
 <p>man自体についても調べることができます。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../terminal/how_to_command.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../terminal/how_to_shell.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -249,7 +266,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../terminal/how_to_command.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../terminal/how_to_shell.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
