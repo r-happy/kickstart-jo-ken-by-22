@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="terminal/command_collection.html"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li><li class="chapter-item expanded "><a href="static-site-intro/load-css.html"><strong aria-hidden="true">2.5.</strong> cssを読み込む</a></li><li class="chapter-item expanded "><a href="static-site-intro/edit-css.html"><strong aria-hidden="true">2.6.</strong> cssの編集</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -450,6 +450,79 @@ vscodeの左下にある<code>Go Live</code>をクリックします。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cssファイルの作成"><a class="header" href="#cssファイルの作成">cssファイルの作成</a></h1>
 <p>cssはウェブサイトの外観やスタイルを変更するためのスタイルシートです。
 html要素の定義でしたがcssはそれを装飾します。</p>
+<h2 id="step-1-1"><a class="header" href="#step-1-1">step 1</a></h2>
+<p>htmlの時と同じようにcssファイルを作成します。
+ファイル名は<code>style.css</code>です。</p>
+<p><img src="static-site-intro/./img/make-css-file.png" alt="cssファイルを作成した画像" /></p>
+<h2 id="step-2"><a class="header" href="#step-2">step 2</a></h2>
+<p>では実際にcssを書いていきます。
+最初は以下のコードを<code>style.css</code>にコピペしてください。
+後ほど書き足します。</p>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(#e66465, #9198e5);
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.main { 
+}
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cssを読み込む"><a class="header" href="#cssを読み込む">cssを読み込む</a></h1>
+<p>ここからは実際にcssを適用させていきます。</p>
+<p><strong>ここから編集するファイルはhtmlファイルです</strong></p>
+<p>htmlファイルのheadタグの中で<code>link</code>と打つと補完が表示されます。
+そこで<code>link:css</code>を選択し<code>enter</code>を押します。</p>
+<p><img src="static-site-intro/./img/load-css.png" alt="cssを読み込む" /></p>
+<p>そうすると<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>このように補完されます。
+この<code>href="&lt;hogehoge&gt;"</code>のところではcssファイル名を入れます。
+（このままでも動くのですが）
+試しに<code>""</code>の中(<code>style.css</code>)を消して<code>./</code>と打ってみましょう。</p>
+<p><img src="static-site-intro/./img/load-css-hokan.png" alt="hokan" /></p>
+<p>そうすると現在のフォルダにあるファイルの候補を表示してくれます。
+そこで<code>style.css</code>を指定します。</p>
+<p>bodyタグのなかも編集します。</p>
+<pre><code class="language-html">    &lt;div class="main"&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>最終的なhtmlファイルのコードを示します。</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="main"&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>これでcssの読み込みは終了です。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cssの編集"><a class="header" href="#cssの編集">cssの編集</a></h1>
+<p><code>.</code>をつけることでhtmlのclassを指定することができます。</p>
+<pre><code class="language-css">.main { 
+    color: blue;
+    font-style: italic;
+}
+</code></pre>
+<p>このようにするとサイトのほうでは<code>Hello World</code>の色が変わり斜体になっているのがわかると思います。</p>
+<p>cssのプロパティはたくさんあるので調べながらコツコツ覚えていきましょう。</p>
 
                     </main>
 

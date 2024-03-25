@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>シェルの使い方 - kickstart for jo-ken by 22</title>
+        <title>cssを読み込む - kickstart for jo-ken by 22</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html" class="active"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/load-css.html"><strong aria-hidden="true">2.5.</strong> cssを読み込む</a></li><li class="chapter-item expanded "><a href="../static-site-intro/edit-css.html"><strong aria-hidden="true">2.6.</strong> cssの編集</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../basic_knowledge/basic_knowledge.html">基本的な知識について</a></li><li class="chapter-item expanded "><a href="../terminal/terminal.html"><strong aria-hidden="true">1.</strong> ターミナルの操作</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../terminal/how_to_shell.html"><strong aria-hidden="true">1.1.</strong> シェルの使い方</a></li><li class="chapter-item expanded "><a href="../terminal/command_collection.html"><strong aria-hidden="true">1.2.</strong> よく使うコマンド集</a></li></ol></li><li class="chapter-item expanded "><a href="../static-site-intro/index.html"><strong aria-hidden="true">2.</strong> webサイトを作ってみよう!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../static-site-intro/environment.html"><strong aria-hidden="true">2.1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-file.html"><strong aria-hidden="true">2.2.</strong> ファイルを作る</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-html-file.html"><strong aria-hidden="true">2.3.</strong> htmlファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/make-css-file.html"><strong aria-hidden="true">2.4.</strong> cssファイルの作成</a></li><li class="chapter-item expanded "><a href="../static-site-intro/load-css.html" class="active"><strong aria-hidden="true">2.5.</strong> cssを読み込む</a></li><li class="chapter-item expanded "><a href="../static-site-intro/edit-css.html"><strong aria-hidden="true">2.6.</strong> cssの編集</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,40 +173,54 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="シェルの使い方"><a class="header" href="#シェルの使い方">シェルの使い方</a></h1>
-<p>では、キーボードのwindowsキーを押して、「wsl」と入力してみてください。なにやら黒っぽい画面が立ち上がりましたね。ここからはコマンドというものを使って操作をしていきます。ここで使用するコマンドは「よく使うコマンド集」としてまとめていますので、参照するようにしてください。</p>
-<h2 id="操作の練習"><a class="header" href="#操作の練習">操作の練習</a></h2>
-<p>これからコマンドの練習をしますが、今回はあえてprocessingで作成したコードがある場所で行います。</p>
-<p>まず、そこへ移動するために、cdコマンドを使用します。</p>
-<pre><code class="language-shell">cd &lt;移動したい場所&gt;
+                        <h1 id="cssを読み込む"><a class="header" href="#cssを読み込む">cssを読み込む</a></h1>
+<p>ここからは実際にcssを適用させていきます。</p>
+<p><strong>ここから編集するファイルはhtmlファイルです</strong></p>
+<p>htmlファイルのheadタグの中で<code>link</code>と打つと補完が表示されます。
+そこで<code>link:css</code>を選択し<code>enter</code>を押します。</p>
+<p><img src="./img/load-css.png" alt="cssを読み込む" /></p>
+<p>そうすると<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>このように補完されます。
+この<code>href="&lt;hogehoge&gt;"</code>のところではcssファイル名を入れます。
+（このままでも動くのですが）
+試しに<code>""</code>の中(<code>style.css</code>)を消して<code>./</code>と打ってみましょう。</p>
+<p><img src="./img/load-css-hokan.png" alt="hokan" /></p>
+<p>そうすると現在のフォルダにあるファイルの候補を表示してくれます。
+そこで<code>style.css</code>を指定します。</p>
+<p>bodyタグのなかも編集します。</p>
+<pre><code class="language-html">    &lt;div class="main"&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/div&gt;
 </code></pre>
-<p>移動ができたら、lsコマンドでコードがあるか確認しましょう。</p>
-<pre><code class="language-shell">ls
+<p>最終的なhtmlファイルのコードを示します。</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="main"&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
 </code></pre>
-<p>ありましたか？では次にディレクトリ(フォルダー)を作成してみましょう。</p>
-<pre><code class="language-shell">mkdir &lt;ディレクトリの名前&gt;
-</code></pre>
-<p>またlsコマンドで作成されたか確認できたら、cdコマンドでそこへ移動しましょう。次に新しいファイルを作成してみます。作成方法はいろいろな方法がありますが、ここではtouchコマンドを使用します。とりあえず、2つファイルを作ってください。</p>
-<pre><code class="language-shell">touch &lt;ファイルの名前&gt;
-</code></pre>
-<p>ではせっかく作成したファイルですが、rmコマンドを使って、1つ削除しましょう。</p>
-<pre><code class="language-shell">rm &lt;ファイルの名前&gt;
-</code></pre>
-<p>lsすると消えてしまったことを確認できるでしょう。このような操作では<strong>ゴミ箱のような機能は利用できない</strong>ので、気をつけましょう。最後に今作成したファイルの名前をmvコマンドで変更してください。</p>
-<pre><code class="language-shell">mv &lt;先ほどのファイルの名前&gt; ignore_me.txt
-</code></pre>
-<h2 id="next"><a class="header" href="#next">next</a></h2>
-<p>皆さんはprocessingでコードを書いてきましたが、なにか変更があったけど取り消したい場合などがあったことでしょう。そんなときに便利なのが次に紹介するgitです。<a href="https://kickstart.jo-ken.info/git/index.html">講座ページ</a></p>
+<p>これでcssの読み込みは終了です。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../terminal/terminal.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../static-site-intro/make-css-file.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../terminal/command_collection.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../static-site-intro/edit-css.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -216,11 +230,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../terminal/terminal.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../static-site-intro/make-css-file.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../terminal/command_collection.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../static-site-intro/edit-css.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
