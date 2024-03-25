@@ -13,3 +13,5 @@
   - [ファイルを作る](./static-site-intro/make-file.md)
   - [htmlファイルの作成](./static-site-intro/make-html-file.md)
   - [cssファイルの作成](./static-site-intro/make-css-file.md)
+  - [cssを読み込む](./static-site-intro/load-css.md)
+  - [cssの編集](./static-site-intro/edit-css.md)
